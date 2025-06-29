@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Walmart Clone</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+    }
+    header {
+      background-color: #0071dc;
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .search-bar {
+      flex: 1;
+      margin: 10px;
+    }
+    .search-bar input {
+      width: 100%;
+      padding: 8px;
+      border-radius: 5px;
+      border: none;
+    }
+    .header-links a {
+      color: white;
+      margin-left: 15px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    nav {
+      background-color: white;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      padding: 10px;
+      border-bottom: 1px solid #ccc;
+    }
+    nav a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .product-card {
+      background: white;
+      border-radius: 10px;
+      padding: 15px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      text-align: left;
+    }
+
+    .product-card img {
+      width: 100%;
+      border-radius: 10px;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .product-card h3 {
+      margin: 10px 0 5px;
+      font-size: 18px;
+    }
+
+    .product-card p {
+      font-size: 14px;
+    }
+
+    .product-card button {
+      background-color: #0071dc;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 5px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .search-bar {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">Walmart</div>
+  <div class="search-bar">
+    <input type="text" placeholder="Search everything at Walmart online and in store" />
+  </div>
+  <div class="header-links">
+    <a href="signin.html">Sign In</a>
+    <a href="cart.html">Cart</a>
+  </div>
+</header>
+
+<nav>
+  <a href="#">Departments</a>
+  <a href="#">Services</a>
+  <a href="#">New Arrivals</a>
+  <a href="#">Trending</a>
+  <a href="#">Back to School</a>
+</nav>
+
+<div class="product-grid">
+  <div class="product-card">
+    <img src="beauty.jpg" alt="Beauty">
+    <h3>Hot, new beauty from $10</h3>
+    <p>New arrivals in skincare & more</p>
+    <button>Shop now</button>
+  </div>
+
+  <div class="product-card">
+    <img src="july.jpg" alt="July 4th">
+    <h3>Hot July 4th savings</h3>
+    <p>Get it in as fast as an hour*</p>
+    <button>Shop now</button>
+  </div>
+
+  <div class="product-card">
+    <img src="pet.jpg" alt="Pet Picks">
+    <h3>Save big on pet picks</h3>
+    <p>Friskies, Pedigree & more</p>
+    <button>Shop now</button>
+  </div>
+
+  <div class="product-card">
+    <img src="peppa.jpg" alt="Peppa Pig">
+    <h3>Only at Walmart — Baby Evie toys</h3>
+    <p>Peppa Pig & more</p>
+    <button>Shop now</button>
+  </div>
+
+  <div class="product-card">
+    <img src="skincare.jpg" alt="Skin Care">
+    <h3>25% off La Roche-Posay</h3>
+    <p>Offer ends June 28</p>
+    <button>Shop now</button>
+  </div>
+
+  <div class="product-card">
+    <img src="lastminute.jpg" alt="Last Minute">
+    <h3>Last-minute July 4th faves</h3>
+    <p>Party supplies, toys, food & more</p>
+    <button>Shop now</button>
+  </div>
+</div>
+
+</body>
+</html>

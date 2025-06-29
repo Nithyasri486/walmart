@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Your Cart</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: url('https://i.imgur.com/UjE2UgV.jpg') no-repeat center center fixed;
+      background-size: cover;
+      padding: 20px;
+    }
+    h2 {
+      text-align: center;
+      color: white;
+      text-shadow: 1px 1px 3px black;
+    }
+    .cart-container {
+      max-width: 600px;
+      margin: auto;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background: #0071dc;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      margin-top: 15px;
+      cursor: pointer;
+    }
+    .product-entry {
+      margin-top: 20px;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background: #f9f9f9;
+    }
+    img {
+      max-width: 100px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<h2>Your Cart - Return Products</h2>
+
+<div class="cart-container">
+  <form id="returnForm">
+    <label>Product ID or QR Code:</label>
+    <input type="text" id="productId" required placeholder="Scan or Enter Product ID">
+
+    <label>Date of Purchase:</label>
+    <input type="date" id="purchaseDate" required>
+
+    <label>Product Photo (optional):</label>
+    <input type="file" id="productPhoto" accept="image/*">
+
+    <button type="submit">Add Product for Return</button>
+  </form>
+
+  <div id="cartItems"></div>
+</div>
+
+<script>
+  const form = document.getElementById('returnForm');
+  const cartItems = document.getElementById('cartItems');
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const productId = document.getElementById('productId').value;
+    const purchaseDate = document.getElementById('purchaseDate').value;
+    const photoInput = document.getElementById('productPhoto');
+    const photo = photoInput.files[0];
+
+    let newItem = document.createElement('div');
+    newItem.className = 'product-entry';
+
+    newItem.innerHTML = `
+      <p><strong>Product ID:</strong> ${productId}</p>
+      <p><strong>Purchase Date:</strong> ${purchaseDate}</p>
+      ${photo ? `<img src="${URL.createObjectURL(photo)}">` : ''}
+      <button onclick="alert('Return initiated for Product ID: ${productId}')">Return</button>
+    `;
+
+    cartItems.appendChild(newItem);
+    form.reset();
+  });
+</script>
+
+</body>
+</html>
